@@ -9,7 +9,7 @@ import org.mapstruct.factory.Mappers;
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface GenericMapper {
 
-    GenericMapper INSTANCE = Mappers.getMapper(GenericMapper.class);
+    public GenericMapper INSTANCE = Mappers.getMapper(GenericMapper.class);
 
     ProdutoDto produtoDto(Produto produto);
 }
