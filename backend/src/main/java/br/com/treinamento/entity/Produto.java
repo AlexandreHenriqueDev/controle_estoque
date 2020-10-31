@@ -1,5 +1,7 @@
 package br.com.treinamento.entity;
 
+import br.com.treinamento.dto.ProdutoDto;
+import br.com.treinamento.mapper.GenericMapper;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -24,6 +26,10 @@ public class Produto {
 
     @Column(name = "quantidade")
     private Integer quantidade;
+
+    public ProdutoDto toDto() {
+        return GenericMapper.INSTANCE.produtoDto(this);
+    }
 
 }
 
