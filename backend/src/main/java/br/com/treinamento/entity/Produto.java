@@ -20,6 +20,10 @@ public class Produto {
     private String id;
 
     @NotNull
+    @Column(name = "codigo", unique = true)
+    private String codigo;
+
+    @NotNull
     @Column(name = "nome")
     private String nome;
 
