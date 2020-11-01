@@ -9,4 +9,6 @@ public interface ProdutoRepository extends CrudRepository<Produto, String> {
 
     List<Produto> findAll();
 
+    List<Produto> findByCodigo(String codigo);
+
 }
