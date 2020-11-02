@@ -53,6 +53,8 @@ yarn start
 - O sistema de login não foi concluido.
 - Devido ao curto espaço de tempo alguns requisitos não funcionais não foram implementados como responsividade.
 - Para criar o banco no disco é necessário inserir uma pequena configuração do h2, então será gerado o arquivo com o script de criação do banco.
+- Somente duas rotas foram utilizadas para navegar, uma a rota da tela de login '/', outra da pagina inicial '/inicio'.
+- Algumas funcionalidades foram reformuladas para deixar o sistema mais utilizavel, como a troca pela opção de acessar uma tela de cadastro pela opção de cadastrar um novo produto na própria tabela de exibição.
 
 ## Justificativa da escolha das tecnologias
 
