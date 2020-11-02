@@ -47,7 +47,6 @@ export default props => {
 	const history = useHistory()
 	function signIn() {
 		//TODO - implementar validação e serviços de login
-		console.log("CU")
 		history.push('/inicio')
 	};
 
