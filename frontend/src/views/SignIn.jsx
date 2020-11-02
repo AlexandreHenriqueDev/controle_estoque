@@ -46,7 +46,6 @@ export default props => {
 	const classes = useStyles();
 	const history = useHistory()
 	function signIn() {
-		//TODO - implementar validação e serviços de login
 		history.push('/inicio')
 	};
 
