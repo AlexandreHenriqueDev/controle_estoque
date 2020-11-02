@@ -28,7 +28,7 @@
 - Para executar a aplicação, primeiramente é necessário baixar suas dependencias
 - Com as dependencias baixadas basta executar o Run da aplicação em sua IDE ou pelo terminal executar:
 
-mvn spring-boot:run
+cd ~/DIRETORIO_DO_USUARIO/controle_estoque/backend/ && mvn spring-boot:run
 
 - O banco de dados ser criado em memória e para acessá-lo basta acessar http://localhost:9090/h2-console
 
@@ -36,7 +36,9 @@ mvn spring-boot:run
 
 - Para executar o frontend também é necessário fazer o download de suas dependencias
 
-cd ~/DIRETORIO_DO_USUARIO/controle_estoque/frontend/
+cd ~/DIRETORIO_DO_USUARIO/controle_estoque/frontend/ 
+
+&& 
 
 yarn install OU npm install
 
