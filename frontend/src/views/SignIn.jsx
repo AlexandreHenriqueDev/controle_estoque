@@ -10,91 +10,97 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import { useHistory } from 'react-router-dom';
 
 function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
+	return (
+		<Typography variant="body2" color="textSecondary" align="center">
+			{'Copyright © '}
+			{new Date().getFullYear()}
+			{'.'}
+		</Typography>
+	);
 }
 
 const useStyles = makeStyles((theme) => ({
-  paper: {
-    marginTop: theme.spacing(8),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-  },
-  form: {
-    width: '100%',
-    marginTop: theme.spacing(1),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
+	paper: {
+		marginTop: theme.spacing(8),
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+	},
+	avatar: {
+		margin: theme.spacing(1),
+		backgroundColor: theme.palette.secondary.main,
+	},
+	form: {
+		width: '100%',
+		marginTop: theme.spacing(1),
+	},
+	submit: {
+		margin: theme.spacing(3, 0, 2),
+	},
 }));
 
-export default _ => {
-  const classes = useStyles();
+export default props => {
+	const classes = useStyles();
+	const history = useHistory()
+	function signIn() {
+		//TODO - implementar validação e serviços de login
+		console.log("CU")
+		history.push('/inicio')
+	};
 
-  return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Controle de estoque
-        </Typography>
-        <form className={classes.form} noValidate>
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email"
-            name="email"
-            autoComplete="email"
-            autoFocus
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Senha"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Lembrar senha"
-          />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
-            Login
-          </Button>
-        </form>
-      </div>
-      <Box mt={8}>
-        <Copyright />
-      </Box>
-    </Container>
-  );
+	return(
+		<Container component="main" maxWidth="xs">
+			<CssBaseline />
+			<div className={classes.paper}>
+				<Avatar className={classes.avatar}>
+					<LockOutlinedIcon />
+				</Avatar>
+				<Typography component="h1" variant="h5">
+					Controle de estoque
+				</Typography>
+				<form className={classes.form}>
+					<TextField
+						variant="outlined"
+						margin="normal"
+						fullWidth
+						id="email"
+						label="Email"
+						name="email"
+						autoComplete="email"
+						autoFocus
+					/>
+					<TextField
+						variant="outlined"
+						margin="normal"
+						fullWidth
+						name="password"
+						label="Senha"
+						type="password"
+						id="password"
+						autoComplete="current-password"
+					/>
+					<FormControlLabel
+						control={<Checkbox value="remember" color="primary" />}
+						label="Lembrar senha"
+					/>
+					<Button
+						type="submit"
+						fullWidth
+						variant="contained"
+						color="primary"
+						className={classes.submit}
+						onClick={_ => signIn()}
+					>
+						Login
+					</Button>
+				</form>
+			</div>
+			<Box mt={8}>
+				<Copyright />
+			</Box>
+		</Container>
+	);
 }

@@ -1,31 +1,31 @@
 import React from 'react'
 import ProductTable from '~/components/ProductTable'
-import Button from '@material-ui/core/Button'
-import Add from '@material-ui/icons/Add'
-import { makeStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
-import Box from '@material-ui/core/Box'
-
-const useStyles = makeStyles((theme) => ({
-	button: {
-		borderRadius: '20px'
-	}
-}))
+import Grid from '@material-ui/core/Grid';
 
 export default _ => {
-	const classes = useStyles()
 
 	return (
-		<Container maxWidth="md" id="home">
-			<ProductTable />
-			<Box width="100%" height="50vh" display="flex" justifyContent="center">
-				<div>
-					<Button type="submit" variant="outlined" color="primary" className={classes.button} startIcon={<Add />}>
-						Adicionar
-					</Button>
-				</div>
-			</Box>
-		</Container>
+		<div style={{backgroundColor: '#9ea8dd'}}>
+			<Container maxWidth="md" id="home" style={{backgroundColor: '#dde1f3', minHeight: '100vh'}}>
+				<Grid
+					container
+					direction="row"
+					justify="center"
+					alignItems="center"
+				>
+					<h1 style={{color: '#fff', margin: '5vh 0'}}>Sistema de controle de estoque</h1>
+				</Grid>
+				<Grid
+					container
+					direction="row"
+					justify="center"
+					alignItems="center"
+				>
+					<ProductTable/>
+				</Grid>
+			</Container>
+		</div>
 	)
 
 }
