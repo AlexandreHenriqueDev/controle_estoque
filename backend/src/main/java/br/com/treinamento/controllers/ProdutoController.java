@@ -23,7 +23,7 @@ public class ProdutoController {
     }
 
     @PostMapping(value = "/estoque/novo")
-    public ResponseEntity<List<ProdutoDto>> inserirProduto(@Valid @RequestBody ProdutoDto produtoDto, Principal principal) {
+    public ResponseEntity<List<ProdutoDto>> inserirProduto(@RequestBody ProdutoDto produtoDto) {
         return ResponseEntity.ok().body(service.inserirProduto(produtoDto));
     }
 
